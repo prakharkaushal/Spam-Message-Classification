@@ -6,11 +6,11 @@ The project explores two primary classification methods: **Multinomial Naive Bay
 
 ## 📂 Project Overview
 
-* **Goal**: Distinguish between real and spam SMS messages using text analysis[cite: 167, 172].
-* [cite_start]**Dataset**: SMS Spam Collection v.1[cite: 169].
+* **Goal**: Distinguish between real and spam SMS messages using text analysis.
+* **Dataset**: SMS Spam Collection v.1.
 * **Models Implemented**:
-    1.  [cite_start]**Naive Bayes**: Multinomial event model with Laplace smoothing[cite: 177].
-    2.  [cite_start]**SVM**: Radial Basis Function (RBF) kernel with hyperparameter tuning[cite: 195].
+    1.  **Naive Bayes**: Multinomial event model with Laplace smoothing.
+    2.  **SVM**: Radial Basis Function (RBF) kernel with hyperparameter tuning.
 
 ## 📊 Dataset
 
@@ -22,20 +22,20 @@ The project uses the **SMS Spam Collection** developed by Tiago A. Almeida and J
 ## 🛠️ Methodology
 
 ### 1. Data Preprocessing
-[cite_start]Raw SMS messages are converted into numerical feature vectors using the **Bag-of-Words** model[cite: 173]:
+Raw SMS messages are converted into numerical feature vectors using the **Bag-of-Words** model:
 * **Tokenization**: Messages are split into words and converted to lowercase.
 * **Dictionary Creation**: A vocabulary is built using only words that appear in at least **5 messages** to reduce noise.
-* [cite_start]**Vectorization**: Text is transformed into a matrix where $x_j^{(i)}$ represents the frequency of word $j$ in message $i$[cite: 174].
+* **Vectorization**: Text is transformed into a matrix where word frequencies are mapped to column indices.
 
 ### 2. Naive Bayes Classifier
 * **Smoothing**: Implements Laplace smoothing to handle zero-frequency words.
-* [cite_start]**Log-Domain Prediction**: To prevent numerical underflow (caused by multiplying many small probabilities), predictions are calculated in the log domain[cite: 180, 184]:
+* **Log-Domain Prediction**: To prevent numerical underflow (caused by multiplying many small probabilities), predictions are calculated in the log domain:
     $$\sum \log p(x_k|y) + \log p(y)$$
-* [cite_start]**Interpretability**: The model identifies "indicative words" by comparing the log-probability ratio of a word appearing in spam vs. ham[cite: 186].
+* **Interpretability**: The model identifies "indicative words" by comparing the log-probability ratio of a word appearing in spam vs. ham.
 
 ### 3. Support Vector Machine (SVM)
-* [cite_start]**Kernel**: Uses a Radial Basis Function (RBF) kernel[cite: 195].
-* [cite_start]**Hyperparameter Tuning**: A Grid Search is performed to find the optimal **radius** ($\gamma$) for the RBF kernel by maximizing accuracy on a validation set[cite: 197].
+* **Kernel**: Uses a Radial Basis Function (RBF) kernel.
+* **Hyperparameter Tuning**: A Grid Search is performed to find the optimal **radius** (gamma) for the RBF kernel by maximizing accuracy on a validation set.
 
 ## 🚀 Results
 
@@ -79,4 +79,4 @@ The Naive Bayes analysis identified the following words as the strongest indicat
 
 ## 📜 References
 * CS229: Machine Learning - Problem Set 2.
-* [cite_start]Almeida, T.A., Gómez Hidalgo, J.M., Yamakami, A. *Contributions to the Study of SMS Spam Filtering: New Collection and Results* (2011)[cite: 169].
+* Almeida, T.A., Gómez Hidalgo, J.M., Yamakami, A. *Contributions to the Study of SMS Spam Filtering: New Collection and Results* (2011).
