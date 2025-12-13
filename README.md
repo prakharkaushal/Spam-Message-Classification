@@ -54,6 +54,13 @@ The Naive Bayes analysis identified the following words as the strongest indicat
 4.  `tone`
 5.  `urgent!`
 
+## 📊 Results
+
+### Confusion Matrix
+![Confusion Matrix](./output/confusion_matrices.png)
+
+### Top Spam Indicators
+![Top Words](./output/top_spam_words.png)
 ## 💻 Usage
 
 ### Prerequisites
